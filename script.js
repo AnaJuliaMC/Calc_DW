@@ -72,12 +72,18 @@ for(let btn of btnOperacoes){
 function atualizaDisplay(calculadora) {
     calculadora.bufferTextoElemento.innerText = calculadora.operandoAnterior
     calculadora.displayTextoElemento.innerText = calculadora.operandoAtual
+    
 }
 
 /* Limpa os atributos do objeto calculadora e atualiza o display.
  * Para atualizar o dispay, chame a função responsável por isso.
  */
-function limpaVariaveis(calculadora) {}
+function limpaVariaveis(calculadora) {
+    calculadora.operandoAnterior = ""
+    calculadora.operandoAtual = ''
+    calculadora.operador = ''
+    atualizaDisplay(calculadora)
+}
 
 /* Função chamada quando um botão de número é pressionado
  * A função recebe o objeto calculadora e o número a ser exibido no display.
@@ -111,9 +117,15 @@ function escolheOperador(calculadora, operador) {
  * - Atualizar os atributos operador, operandoAnterior e operandoAtual
  * - Atualizar o display
  */
-function executaCalculo(calculadora) {}
+function executaCalculo(calculadora) {
+    let operador = calculadora.operador;
+    let operandoAnterior = parseFloat(calculadora.operadorAnterior);
+    let operandoAtual = parseFloat(calculadora.operandoAtual);
+    let resultado; 
+}
 
 /* Função chamada quando o botão delete for pressionado
  * Apaga o último dígito digitado no
  */
 function apagaDigito(calculadora) {}
+
